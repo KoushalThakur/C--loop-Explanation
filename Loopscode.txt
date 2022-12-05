@@ -1,0 +1,289 @@
+Loops :A section of code will gets executed again and again untill the condition is true if the condtion is false then the code will 
+not execute and it comes out of the loop 
+Loops in C# cause a section of programs to be executed repeatedly while an expression is  true.when the expression becomes false loop terminates and control passes on to the statement following the loop.A loop consists of two segments.One is known as control statement and the other is the body of the loop
+the versatility of computer lies in its ability to perform  a set of  instructions repeatedly 
+
+
+1) while 
+
+while(condition)
+{
+
+
+}
+
+2) do while loop 
+
+do 
+{
+
+
+
+}while(condtion)
+
+
+3) for loop 
+
+for( initization ;checking condtion ;incremen or decrement )
+{
+
+}
+
+while loop will not allow the code to execute if the condtion is not true but do while will allow one time the code to execute 
+eventhough the condtion is wrong 
+
+First sample code simpel code 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace LoopDemos
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			int counter=200;
+
+			//while (counter <=100 )
+			//{
+			//	Console.Write("{0,5}", counter);
+			//	counter = counter + 1;
+			//}
+
+			do
+			{
+				Console.Write("{0,5}", counter);
+				counter = counter + 1;
+			} while (counter <=100);
+
+			Console.ReadLine();
+		}
+	}
+}
+
+
+counting  of numbers every 100 using do while loop using keepgoing boolean variable 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace LoopDemos
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			
+			Console.WriteLine("\n start counting using do while loop ");
+			bool keepgoing = true;
+			int counter = 1;
+			do
+			{
+				Console.Write("{0,5}", counter);
+				if((counter %100 ==0) && counter!=0)
+				{
+					Console.WriteLine("\nKeep counting <y/n>?");
+				  if(Console.ReadLine()!="y")
+					{
+						keepgoing = false;
+					}
+
+				}
+
+				counter = counter + 1;
+			} while (keepgoing);
+			Console.WriteLine("The counting is finished");
+			
+
+			Console.ReadLine();
+		}
+	}
+}
+
+infinite loop code  which is always true
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace LoopDemos
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			int x = 1;
+			while(x<100)
+			{
+				Console.Write("{0,5}", x);
+			}
+
+			Console.ReadLine();
+		}
+	}
+}
+
+
+code for do while loop using break in infinite loop always true is infinite loop so if u want to come out of infinite loop 
+then u have to use break statement 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace LoopDemos
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			
+			Console.WriteLine("\n start counting using do while loop ");
+			//bool keepgoing = true;
+			int counter = 1;
+			do
+			{
+				Console.Write("{0,5}", counter);
+				if((counter %100 ==0) && counter!=0)
+				{
+					Console.WriteLine("\nKeep counting <y/n>?");
+				  if(Console.ReadLine()!="y")
+					{
+						break;
+						//keepgoing = false;
+					}
+
+				}
+
+				counter = counter + 1;
+			} while (true);
+			Console.WriteLine("The counting is finished");
+			
+
+			Console.ReadLine();
+		}
+	}
+}
+
+
+using switch menu driven program in do while loop 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace LoopDemos
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+
+            int a, b, c, choice;
+            Console.Clear();
+            Console.WriteLine("enter values in a and b...");
+
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+
+			do
+			{
+                Console.WriteLine("1.addition....");
+                Console.WriteLine("2.substraction...");
+                Console.WriteLine("3.Multiplication....");
+                Console.WriteLine("4.Division...");
+                Console.WriteLine("enter your choice....");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        c = a + b;
+                        Console.WriteLine("The sum is " + c);
+                        break;
+
+                    case 2:
+                        c = (a > b) ? (a - b) : (b - a);
+                        Console.WriteLine("The sum is " + c);
+                        break;
+
+                    case 3:
+                        c = a * b;
+                        Console.WriteLine("The sum is " + c);
+                        break;
+
+                    case 4:
+                        c = a / b;
+                        Console.WriteLine("The sum is " + c);
+                        break;
+
+                    default:
+                        Console.WriteLine("wrong value entered...");
+                        break;
+                }
+                Console.WriteLine("do you want to continue the loop ");
+                if(Console.ReadLine()!="y")
+				{
+                    break;
+				}
+
+            } while (true);
+
+           
+            Console.ReadLine();
+
+            Console.ReadLine();
+		}
+	}
+}
+
+
+factorial finding using for loop 
+--------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace LoopDemos
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			int i;
+			int n;
+			float f = 1.0F;
+			Console.WriteLine("enter value for n to whom u want to find facorial");
+			n = Convert.ToInt32(Console.ReadLine());
+			for(i=1;i<=n;i++)
+			{
+				f = f * i;
+
+			}
+
+			Console.WriteLine("The factorial of {0} is {1}", n, f);
+           
+            
+
+            Console.ReadLine();
+		}
+	}
+}
+
+
+
+
+
